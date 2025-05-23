@@ -10,3 +10,5 @@
 >    * For **D**, type the date as `DDMMYY` (e.g. `230525` for 23/05/2025).
 >
 > The LCD will then update to show your new time or date.
+> 
+> This is the Lab 07
