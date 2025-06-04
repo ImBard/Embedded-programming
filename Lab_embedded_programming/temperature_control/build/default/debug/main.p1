@@ -1,0 +1,306 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"23 ./lcd.h
+[; ;./lcd.h: 23:  void lcdCommand(unsigned char cmd);
+[v _lcdCommand `(v ~T0 @X0 0 ef1`uc ]
+"24
+[; ;./lcd.h: 24:  void lcdData(unsigned char valor);
+[v _lcdData `(v ~T0 @X0 0 ef1`uc ]
+"23 ./adc.h
+[; ;./adc.h: 23:  int adcRead(void);
+[v _adcRead `(i ~T0 @X0 0 ef ]
+[p mainexit ]
+"25 ./lcd.h
+[; ;./lcd.h: 25:  void lcdInit(void);
+[v _lcdInit `(v ~T0 @X0 0 ef ]
+"22 ./adc.h
+[; ;./adc.h: 22:  void adcInit(void);
+[v _adcInit `(v ~T0 @X0 0 ef ]
+"26 ./pwm.h
+[; ;./pwm.h: 26:  void pwmInit(void);
+[v _pwmInit `(v ~T0 @X0 0 ef ]
+"25 ./keypad.h
+[; ;./keypad.h: 25:  void kpInit(void);
+[v _kpInit `(v ~T0 @X0 0 ef ]
+"25 ./pwm.h
+[; ;./pwm.h: 25:  void pwmFrequency(unsigned int freq);
+[v _pwmFrequency `(v ~T0 @X0 0 ef1`ui ]
+"17 ./contTemp.h
+[; ;./contTemp.h: 17: void ConfiguraLimiteSuperior(unsigned char temp);
+[v _ConfiguraLimiteSuperior `(v ~T0 @X0 0 ef1`uc ]
+"18
+[; ;./contTemp.h: 18: void ConfiguraLimiteInferior(unsigned char temp);
+[v _ConfiguraLimiteInferior `(v ~T0 @X0 0 ef1`uc ]
+"24 ./keypad.h
+[; ;./keypad.h: 24:  void kpDebounce(void);
+[v _kpDebounce `(v ~T0 @X0 0 ef ]
+"19 ./contTemp.h
+[; ;./contTemp.h: 19: void AtualizarSistema(void);
+[v _AtualizarSistema `(v ~T0 @X0 0 ef ]
+"38 ./config.h
+[p x MCLRE=ON                 ]
+"39
+[p x OSC=HS                   ]
+"40
+[p x WDT=OFF                  ]
+"41
+[p x LVP=OFF                  ]
+"42
+[p x DEBUG  =  OFF              ]
+"43
+[p x WDTPS  =  1                ]
+"11 ./contTemp.h
+[; ;./contTemp.h: 11: unsigned char limiteSup;
+[v _limiteSup `uc ~T0 @X0 1 e ]
+"12
+[; ;./contTemp.h: 12: unsigned char limiteInf;
+[v _limiteInf `uc ~T0 @X0 1 e ]
+"14
+[; ;./contTemp.h: 14: unsigned int cooler;
+[v _cooler `ui ~T0 @X0 1 e ]
+"15
+[; ;./contTemp.h: 15: unsigned int resis;
+[v _resis `ui ~T0 @X0 1 e ]
+"20 main.c
+[; ;main.c: 20: void printInt(unsigned int temp) {
+[v _printInt `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _printInt ]
+[v _temp `ui ~T0 @X0 1 r1 ]
+[f ]
+"21
+[; ;main.c: 21:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"22
+[; ;main.c: 22:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"23
+[; ;main.c: 23:     lcdData(((temp / 1000) % 10) + 48);
+[e ( _lcdData (1 -> + % / _temp -> -> 1000 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"24
+[; ;main.c: 24:     lcdData(((temp / 100) % 10) + 48);
+[e ( _lcdData (1 -> + % / _temp -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"25
+[; ;main.c: 25:     lcdData(((temp / 10) % 10) + 48);
+[e ( _lcdData (1 -> + % / _temp -> -> 10 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"26
+[; ;main.c: 26:     lcdData((temp % 10) + 48);
+[e ( _lcdData (1 -> + % _temp -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"27
+[; ;main.c: 27:     lcdData('H');
+[e ( _lcdData (1 -> -> 72 `ui `uc ]
+"28
+[; ;main.c: 28:     lcdData(((limiteSup / 1000) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteSup `i -> 1000 `i -> 10 `i -> 48 `i `uc ]
+"29
+[; ;main.c: 29:     lcdData(((limiteSup / 100) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteSup `i -> 100 `i -> 10 `i -> 48 `i `uc ]
+"30
+[; ;main.c: 30:     lcdData(((limiteSup / 10) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteSup `i -> 10 `i -> 10 `i -> 48 `i `uc ]
+"31
+[; ;main.c: 31:     lcdData(((limiteSup / 1) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteSup `i -> 1 `i -> 10 `i -> 48 `i `uc ]
+"32
+[; ;main.c: 32:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"33
+[; ;main.c: 33:     lcdData(((limiteInf / 1000) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteInf `i -> 1000 `i -> 10 `i -> 48 `i `uc ]
+"34
+[; ;main.c: 34:     lcdData(((limiteInf / 100) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteInf `i -> 100 `i -> 10 `i -> 48 `i `uc ]
+"35
+[; ;main.c: 35:     lcdData(((limiteInf / 10) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteInf `i -> 10 `i -> 10 `i -> 48 `i `uc ]
+"36
+[; ;main.c: 36:     lcdData(((limiteInf / 1) % 10) + 48);
+[e ( _lcdData (1 -> + % / -> _limiteInf `i -> 1 `i -> 10 `i -> 48 `i `uc ]
+"37
+[; ;main.c: 37:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"38
+[; ;main.c: 38:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"39
+[; ;main.c: 39:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"40
+[; ;main.c: 40:     if (cooler == 1) {
+[e $ ! == _cooler -> -> 1 `i `ui 2  ]
+{
+"41
+[; ;main.c: 41:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"42
+[; ;main.c: 42:         lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"43
+[; ;main.c: 43:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"44
+[; ;main.c: 44:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"45
+[; ;main.c: 45:     } else {
+}
+[e $U 3  ]
+[e :U 2 ]
+{
+"46
+[; ;main.c: 46:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"47
+[; ;main.c: 47:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"48
+[; ;main.c: 48:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"49
+[; ;main.c: 49:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"50
+[; ;main.c: 50:     }
+}
+[e :U 3 ]
+"51
+[; ;main.c: 51:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"52
+[; ;main.c: 52:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"53
+[; ;main.c: 53:     if (resis == 1) {
+[e $ ! == _resis -> -> 1 `i `ui 4  ]
+{
+"54
+[; ;main.c: 54:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"55
+[; ;main.c: 55:         lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"56
+[; ;main.c: 56:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"57
+[; ;main.c: 57:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"58
+[; ;main.c: 58:     } else {
+}
+[e $U 5  ]
+[e :U 4 ]
+{
+"59
+[; ;main.c: 59:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"60
+[; ;main.c: 60:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"61
+[; ;main.c: 61:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"62
+[; ;main.c: 62:         lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"63
+[; ;main.c: 63:     }
+}
+[e :U 5 ]
+"65
+[; ;main.c: 65: }
+[e :UE 1 ]
+}
+"67
+[; ;main.c: 67: unsigned int lerTemperatura(void) {
+[v _lerTemperatura `(ui ~T0 @X0 1 ef ]
+{
+[e :U _lerTemperatura ]
+[f ]
+"68
+[; ;main.c: 68:     return adcRead() / 2;
+[e ) -> / ( _adcRead ..  -> 2 `i `ui ]
+[e $UE 6  ]
+"69
+[; ;main.c: 69: }
+[e :UE 6 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"71
+[; ;main.c: 71: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"73
+[; ;main.c: 73:     lcdInit();
+[e ( _lcdInit ..  ]
+"74
+[; ;main.c: 74:     adcInit();
+[e ( _adcInit ..  ]
+"75
+[; ;main.c: 75:     pwmInit();
+[e ( _pwmInit ..  ]
+"76
+[; ;main.c: 76:     kpInit();
+[e ( _kpInit ..  ]
+"77
+[; ;main.c: 77:     pwmFrequency(1000);
+[e ( _pwmFrequency (1 -> -> 1000 `i `ui ]
+"78
+[; ;main.c: 78:     unsigned int tecla = 16;
+[v _tecla `ui ~T0 @X0 1 a ]
+[e = _tecla -> -> 16 `i `ui ]
+"79
+[; ;main.c: 79:     float i;
+[v _i `f ~T0 @X0 1 a ]
+"80
+[; ;main.c: 80:     unsigned int t;
+[v _t `ui ~T0 @X0 1 a ]
+"81
+[; ;main.c: 81:     ConfiguraLimiteSuperior(31);
+[e ( _ConfiguraLimiteSuperior (1 -> -> 31 `i `uc ]
+"82
+[; ;main.c: 82:     ConfiguraLimiteInferior(28);
+[e ( _ConfiguraLimiteInferior (1 -> -> 28 `i `uc ]
+"84
+[; ;main.c: 84:     for (;;) {
+{
+[e :U 8 ]
+{
+"85
+[; ;main.c: 85:         kpDebounce();
+[e ( _kpDebounce ..  ]
+"105
+[; ;main.c: 105:         t = lerTemperatura();
+[e = _t ( _lerTemperatura ..  ]
+"107
+[; ;main.c: 107:         printInt(t);
+[e ( _printInt (1 _t ]
+"109
+[; ;main.c: 109:         AtualizarSistema();
+[e ( _AtualizarSistema ..  ]
+"110
+[; ;main.c: 110:         for (i = 0; i < 1000; i++) {
+{
+[e = _i -> -> 0 `i `f ]
+[e $ < _i -> -> 1000 `i `f 11  ]
+[e $U 12  ]
+[e :U 11 ]
+{
+"111
+[; ;main.c: 111:         }
+}
+[e ++ _i -> -> 1 `i `f ]
+[e $ < _i -> -> 1000 `i `f 11  ]
+[e :U 12 ]
+}
+"113
+[; ;main.c: 113:     }
+}
+[e $U 8  ]
+[e :U 9 ]
+}
+"114
+[; ;main.c: 114: }
+[e :UE 7 ]
+}

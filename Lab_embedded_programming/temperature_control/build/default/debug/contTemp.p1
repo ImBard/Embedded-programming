@@ -1,0 +1,112 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"23 ./adc.h
+[; ;./adc.h: 23:  int adcRead(void);
+[v _adcRead `(i ~T0 @X0 0 ef ]
+"23 ./pwm.h
+[; ;./pwm.h: 23:  void pwmSet1(unsigned char porcento);
+[v _pwmSet1 `(v ~T0 @X0 0 ef1`uc ]
+"24
+[; ;./pwm.h: 24:  void pwmSet2(unsigned char porcento);
+[v _pwmSet2 `(v ~T0 @X0 0 ef1`uc ]
+"3 contTemp.c
+[; ;contTemp.c: 3: unsigned char limiteSup;
+[v _limiteSup `uc ~T0 @X0 1 e ]
+"4
+[; ;contTemp.c: 4: unsigned char limiteInf;
+[v _limiteInf `uc ~T0 @X0 1 e ]
+"6
+[; ;contTemp.c: 6: unsigned int cooler;
+[v _cooler `ui ~T0 @X0 1 e ]
+"7
+[; ;contTemp.c: 7: unsigned int resis;
+[v _resis `ui ~T0 @X0 1 e ]
+"9
+[; ;contTemp.c: 9: void ConfiguraLimiteSuperior(unsigned char temp) {
+[v _ConfiguraLimiteSuperior `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _ConfiguraLimiteSuperior ]
+[v _temp `uc ~T0 @X0 1 r1 ]
+[f ]
+"10
+[; ;contTemp.c: 10:     limiteSup = temp;
+[e = _limiteSup _temp ]
+"11
+[; ;contTemp.c: 11: }
+[e :UE 1 ]
+}
+"12
+[; ;contTemp.c: 12: void ConfiguraLimiteInferior(unsigned char temp) {
+[v _ConfiguraLimiteInferior `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _ConfiguraLimiteInferior ]
+[v _temp `uc ~T0 @X0 1 r1 ]
+[f ]
+"13
+[; ;contTemp.c: 13:     limiteInf = temp;
+[e = _limiteInf _temp ]
+"14
+[; ;contTemp.c: 14: }
+[e :UE 2 ]
+}
+"15
+[; ;contTemp.c: 15: void AtualizarSistema(void) {
+[v _AtualizarSistema `(v ~T0 @X0 1 ef ]
+{
+[e :U _AtualizarSistema ]
+[f ]
+"16
+[; ;contTemp.c: 16:     unsigned int temp = adcRead() / 2;
+[v _temp `ui ~T0 @X0 1 a ]
+[e = _temp -> / ( _adcRead ..  -> 2 `i `ui ]
+"18
+[; ;contTemp.c: 18:     if (temp > limiteSup) {
+[e $ ! > _temp -> _limiteSup `ui 4  ]
+{
+"19
+[; ;contTemp.c: 19:         pwmSet1(100);
+[e ( _pwmSet1 (1 -> -> 100 `i `uc ]
+"20
+[; ;contTemp.c: 20:         cooler = 1;
+[e = _cooler -> -> 1 `i `ui ]
+"21
+[; ;contTemp.c: 21:     }
+}
+[e :U 4 ]
+"23
+[; ;contTemp.c: 23:     if (temp < limiteSup && temp > limiteInf) {
+[e $ ! && < _temp -> _limiteSup `ui > _temp -> _limiteInf `ui 5  ]
+{
+"24
+[; ;contTemp.c: 24:         cooler = 0;
+[e = _cooler -> -> 0 `i `ui ]
+"25
+[; ;contTemp.c: 25:         resis = 0;
+[e = _resis -> -> 0 `i `ui ]
+"26
+[; ;contTemp.c: 26:         pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"27
+[; ;contTemp.c: 27:         pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"28
+[; ;contTemp.c: 28:     }
+}
+[e :U 5 ]
+"30
+[; ;contTemp.c: 30:     if (temp < limiteInf) {
+[e $ ! < _temp -> _limiteInf `ui 6  ]
+{
+"31
+[; ;contTemp.c: 31:         resis = 1;
+[e = _resis -> -> 1 `i `ui ]
+"32
+[; ;contTemp.c: 32:         pwmSet2(100);
+[e ( _pwmSet2 (1 -> -> 100 `i `uc ]
+"33
+[; ;contTemp.c: 33:     }
+}
+[e :U 6 ]
+"34
+[; ;contTemp.c: 34: }
+[e :UE 3 ]
+}

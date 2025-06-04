@@ -1,0 +1,326 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4520 ]
+[d frameptr 4065 ]
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.41/pic/sources/c99/common/fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 /opt/microchip/xc8/v2.41/pic/sources/c99/common/flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v2.41/pic/sources/c99/common/float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 /opt/microchip/xc8/v2.41/pic/sources/c99/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 /opt/microchip/xc8/v2.41/pic/sources/c99/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 /opt/microchip/xc8/v2.41/pic/sources/c99/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 /opt/microchip/xc8/v2.41/pic/sources/c99/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"27 /home/aluno/MPLABXProjects/aula_08.X/adc.c
+[v _adcInit adcInit `(v  1 e 1 0 ]
+"36
+[v _adcRead adcRead `(i  1 e 2 0 ]
+"9 /home/aluno/MPLABXProjects/aula_08.X/contTemp.c
+[v _ConfiguraLimiteSuperior ConfiguraLimiteSuperior `(v  1 e 1 0 ]
+"12
+[v _ConfiguraLimiteInferior ConfiguraLimiteInferior `(v  1 e 1 0 ]
+"15
+[v _AtualizarSistema AtualizarSistema `(v  1 e 1 0 ]
+"32 /home/aluno/MPLABXProjects/aula_08.X/keypad.c
+[v _kpDebounce kpDebounce `(v  1 e 1 0 ]
+"71
+[v _kpInit kpInit `(v  1 e 1 0 ]
+"36 /home/aluno/MPLABXProjects/aula_08.X/lcd.c
+[v _Delay40us Delay40us `(v  1 e 1 0 ]
+"41
+[v _Delay2ms Delay2ms `(v  1 e 1 0 ]
+"48
+[v _lcdCommand lcdCommand `(v  1 e 1 0 ]
+"62
+[v _lcdData lcdData `(v  1 e 1 0 ]
+"76
+[v _lcdInit lcdInit `(v  1 e 1 0 ]
+"20 /home/aluno/MPLABXProjects/aula_08.X/main.c
+[v _printInt printInt `(v  1 e 1 0 ]
+"67
+[v _lerTemperatura lerTemperatura `(ui  1 e 2 0 ]
+"71
+[v _main main `(v  1 e 1 0 ]
+"26 /home/aluno/MPLABXProjects/aula_08.X/pwm.c
+[v _pwmSet1 pwmSet1 `(v  1 e 1 0 ]
+"42
+[v _pwmSet2 pwmSet2 `(v  1 e 1 0 ]
+"58
+[v _pwmFrequency pwmFrequency `(v  1 e 1 0 ]
+"64
+[v _pwmInit pwmInit `(v  1 e 1 0 ]
+"3 /home/aluno/MPLABXProjects/aula_08.X/contTemp.c
+[v _limiteSup limiteSup `uc  1 e 1 0 ]
+"4
+[v _limiteInf limiteInf `uc  1 e 1 0 ]
+"6
+[v _cooler cooler `ui  1 e 2 0 ]
+"7
+[v _resis resis `ui  1 e 2 0 ]
+"26 /home/aluno/MPLABXProjects/aula_08.X/keypad.c
+[v _valor valor `uc  1 s 1 valor ]
+"71 /home/aluno/MPLABXProjects/aula_08.X/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"79
+[v main@i i `f  1 a 4 22 ]
+"80
+[v main@t t `ui  1 a 2 20 ]
+"114
+} 0
+"64 /home/aluno/MPLABXProjects/aula_08.X/pwm.c
+[v _pwmInit pwmInit `(v  1 e 1 0 ]
+{
+"74
+} 0
+"58
+[v _pwmFrequency pwmFrequency `(v  1 e 1 0 ]
+{
+[v pwmFrequency@freq freq `ui  1 p 2 14 ]
+"62
+} 0
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
+"7
+[v ___aldiv@dividend dividend `l  1 p 4 0 ]
+[v ___aldiv@divisor divisor `l  1 p 4 4 ]
+"41
+} 0
+"20 /home/aluno/MPLABXProjects/aula_08.X/main.c
+[v _printInt printInt `(v  1 e 1 0 ]
+{
+[v printInt@temp temp `ui  1 p 2 18 ]
+"65
+} 0
+"62 /home/aluno/MPLABXProjects/aula_08.X/lcd.c
+[v _lcdData lcdData `(v  1 e 1 0 ]
+{
+[v lcdData@valor valor `uc  1 a 1 wreg ]
+[v lcdData@valor valor `uc  1 a 1 wreg ]
+[v lcdData@valor valor `uc  1 a 1 1 ]
+"74
+} 0
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 11 ]
+"7
+[v ___lwmod@dividend dividend `ui  1 p 2 7 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 9 ]
+"25
+} 0
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 17 ]
+[v ___awmod@counter counter `uc  1 a 1 16 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 12 ]
+[v ___awmod@divisor divisor `i  1 p 2 14 ]
+"34
+} 0
+"67 /home/aluno/MPLABXProjects/aula_08.X/main.c
+[v _lerTemperatura lerTemperatura `(ui  1 e 2 0 ]
+{
+"69
+} 0
+"76 /home/aluno/MPLABXProjects/aula_08.X/lcd.c
+[v _lcdInit lcdInit `(v  1 e 1 0 ]
+{
+"102
+} 0
+"48
+[v _lcdCommand lcdCommand `(v  1 e 1 0 ]
+{
+[v lcdCommand@cmd cmd `uc  1 a 1 wreg ]
+[v lcdCommand@cmd cmd `uc  1 a 1 wreg ]
+[v lcdCommand@cmd cmd `uc  1 a 1 2 ]
+"60
+} 0
+"41
+[v _Delay2ms Delay2ms `(v  1 e 1 0 ]
+{
+"42
+[v Delay2ms@i i `uc  1 a 1 1 ]
+"46
+} 0
+"36
+[v _Delay40us Delay40us `(v  1 e 1 0 ]
+{
+"37
+[v Delay40us@i i `uc  1 a 1 0 ]
+"39
+} 0
+"71 /home/aluno/MPLABXProjects/aula_08.X/keypad.c
+[v _kpInit kpInit `(v  1 e 1 0 ]
+{
+"79
+} 0
+"32
+[v _kpDebounce kpDebounce `(v  1 e 1 0 ]
+{
+"41
+[v kpDebounce@i i `uc  1 a 1 3 ]
+[v kpDebounce@j j `uc  1 a 1 2 ]
+"42
+[v kpDebounce@tempo tempo `uc  1 s 1 tempo ]
+"43
+[v kpDebounce@valorNovo valorNovo `uc  1 s 1 valorNovo ]
+"44
+[v kpDebounce@valorAntigo valorAntigo `uc  1 s 1 valorAntigo ]
+"69
+} 0
+"27 /home/aluno/MPLABXProjects/aula_08.X/adc.c
+[v _adcInit adcInit `(v  1 e 1 0 ]
+{
+"34
+} 0
+"4 /opt/microchip/xc8/v2.41/pic/sources/c99/common/flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
+} 0
+"10 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 15 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 12 ]
+"10
+[v ___fladd@b b `d  1 p 4 0 ]
+[v ___fladd@a a `d  1 p 4 4 ]
+"237
+} 0
+"9 /home/aluno/MPLABXProjects/aula_08.X/contTemp.c
+[v _ConfiguraLimiteSuperior ConfiguraLimiteSuperior `(v  1 e 1 0 ]
+{
+[v ConfiguraLimiteSuperior@temp temp `uc  1 a 1 wreg ]
+[v ConfiguraLimiteSuperior@temp temp `uc  1 a 1 wreg ]
+[v ConfiguraLimiteSuperior@temp temp `uc  1 a 1 0 ]
+"11
+} 0
+"12
+[v _ConfiguraLimiteInferior ConfiguraLimiteInferior `(v  1 e 1 0 ]
+{
+[v ConfiguraLimiteInferior@temp temp `uc  1 a 1 wreg ]
+[v ConfiguraLimiteInferior@temp temp `uc  1 a 1 wreg ]
+[v ConfiguraLimiteInferior@temp temp `uc  1 a 1 0 ]
+"14
+} 0
+"15
+[v _AtualizarSistema AtualizarSistema `(v  1 e 1 0 ]
+{
+"16
+[v AtualizarSistema@temp temp `ui  1 a 2 14 ]
+"34
+} 0
+"42 /home/aluno/MPLABXProjects/aula_08.X/pwm.c
+[v _pwmSet2 pwmSet2 `(v  1 e 1 0 ]
+{
+[v pwmSet2@porcento porcento `uc  1 a 1 wreg ]
+"43
+[v pwmSet2@val val `ui  1 a 2 10 ]
+"42
+[v pwmSet2@porcento porcento `uc  1 a 1 wreg ]
+[v pwmSet2@porcento porcento `uc  1 a 1 9 ]
+"56
+} 0
+"26
+[v _pwmSet1 pwmSet1 `(v  1 e 1 0 ]
+{
+[v pwmSet1@porcento porcento `uc  1 a 1 wreg ]
+"32
+[v pwmSet1@val val `ui  1 a 2 10 ]
+"26
+[v pwmSet1@porcento porcento `uc  1 a 1 wreg ]
+"32
+[v pwmSet1@porcento porcento `uc  1 a 1 9 ]
+"40
+} 0
+"15 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"30
+} 0
+"36 /home/aluno/MPLABXProjects/aula_08.X/adc.c
+[v _adcRead adcRead `(i  1 e 2 0 ]
+{
+"38
+[v adcRead@ADvalor ADvalor `ui  1 a 2 2 ]
+"47
+} 0
+"7 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 10 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 9 ]
+[v ___awdiv@counter counter `uc  1 a 1 8 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 4 ]
+[v ___awdiv@divisor divisor `i  1 p 2 6 ]
+"41
+} 0
